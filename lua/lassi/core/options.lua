@@ -6,12 +6,13 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.tabstop = 4 -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 4 -- 2 spaces for indent width
+opt.softtabstop = 4
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
-opt.wrap = false
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -23,7 +24,7 @@ opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark default to dark
 opt.signcolumn = "yes"
 
--- backspace 
+-- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 --clipboard
@@ -35,3 +36,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- helpful
+vim.opt.scrolloff = 8 -- always keep minimum 8 lines space when scrolling
