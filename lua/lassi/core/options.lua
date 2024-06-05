@@ -39,3 +39,6 @@ opt.swapfile = false
 
 -- helpful
 vim.opt.scrolloff = 8 -- always keep minimum 8 lines space when scrolling
+
+-- file naming
+vim.opt.isfname:append("@-@")

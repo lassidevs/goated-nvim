@@ -27,3 +27,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("x", "<leader>p", '"_dP', { desc = "Delete selection to blac" })
 keymap.set("n", "<leader>o", "o<ESC>", { desc = "Insert newline and stay on normal mode" })
+
+-- move highlighted text around (similar to vscode)
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
