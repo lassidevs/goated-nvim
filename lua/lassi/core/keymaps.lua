@@ -24,7 +24,6 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- primeagen
 -- delete a selection of text and paste something over it, without copying the deleted text to registery. _d is the blackhole registery
-
 keymap.set("x", "<leader>p", '"_dP', { desc = "Delete selection to blac" })
 keymap.set("n", "<leader>o", "o<ESC>", { desc = "Insert newline and stay on normal mode" })
 
