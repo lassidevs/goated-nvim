@@ -90,12 +90,12 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["volar"] = function()
-				lspconfig.volar.setup({
-					capabilities = capabilities,
-					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-				})
-			end,
+			-- ["volar"] = function()
+			-- 	lspconfig.volar.setup({
+			-- 		capabilities = capabilities,
+			-- 		filetypes = { "vue", "typescript", "javascript" },
+			-- 	})
+			-- end,
 			["rust_analyzer"] = function()
 				lspconfig.rust_analyzer.setup({
 					capabilities = capabilities,
@@ -104,21 +104,35 @@ return {
 					},
 				})
 			end,
-			["svelte"] = function()
-				-- configure svelte server
-				lspconfig["svelte"].setup({
-					capabilities = capabilities,
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePost", {
-							pattern = { "*.js", "*.ts" },
-							callback = function(ctx)
-								-- Here use ctx.match instead of ctx.file
-								client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-							end,
-						})
-					end,
+			["volar"] = function()
+				lspconfig["volar"].setup({
+					filetypes = { "vue", "javascript", "typescript" },
+					init_options = {
+						vue = {
+							hybridMode = false,
+						},
+						typescript = {
+							tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+						},
+					},
 				})
 			end,
+
+			-- ["svelte"] = function()
+			-- 	-- configure svelte server
+			-- 	lspconfig["svelte"].setup({
+			-- 		capabilities = capabilities,
+			-- 		on_attach = function(client, bufnr)
+			-- 			vim.api.nvim_create_autocmd("BufWritePost", {
+			-- 				pattern = { "*.js", "*.ts" },
+			-- 				callback = function(ctx)
+			-- 					-- Here use ctx.match instead of ctx.file
+			-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+			-- 				end,
+			-- 			})
+			-- 		end,
+			-- 	})
+			-- end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
