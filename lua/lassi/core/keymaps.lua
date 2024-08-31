@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+-- lua keymap file for generic keymaps. Avoid adding plugin-specific keymaps as those will throw errors if the plugin is removed
+
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
