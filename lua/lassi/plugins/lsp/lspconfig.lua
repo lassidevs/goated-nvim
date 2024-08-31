@@ -117,6 +117,11 @@ return {
 					},
 				})
 			end,
+			["clangd"] = function()
+				lspconfig["clangd"].setup({
+					capabilities = capabilities,
+				})
+			end,
 
 			-- ["svelte"] = function()
 			-- 	-- configure svelte server
