@@ -49,9 +49,10 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
+				"clang-format", -- c / cpp formatter
 				"pylint",
 				"eslint_d",
-				"clang-format",
+				"codelldb", -- debugger for nvim-dap use, mainly using this for cpp (for now at least)
 			},
 		})
 	end,
