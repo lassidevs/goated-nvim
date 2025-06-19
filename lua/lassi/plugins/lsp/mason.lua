@@ -37,7 +37,6 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
-				"volar",
 				"clangd",
 				"rust_analyzer",
 			},
